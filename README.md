@@ -74,6 +74,29 @@ Expl
 
 ## Data Representation
 
+The first step is to describe a card with a vector. I choosed to use a combinaison on two one-hot encoding, one for the card value (2 to ace) and one for the card color.
+<p align="center">
+  <img src="images/fig_1.png" alt="Fig_1">
+  <br>
+  <i>Figure 1: Representation of a single card</i>
+</p>
+As we can see on figure 1, each card is represented with 17 bits. 
+This way to encode a card is efficient because value and color don't tend to be both relevant in a hand. (the only case it is is in a straight flush with 0.0279% chance of occuring. for a given player)
+A binary representation of a card could take only 6 bits but for such a low dimention vector, simplicity is better than dencity.
+
+We will then concatenate multiple cards to make a hand. Each hand is composed of 7 cards, but some of them can be null. We want to train the network on non-full hands. The firts two cards are always here (and will always be on the first 34 bits) to represent the two cards in hand. The five following cards can be present or absent (leaving 17 zeroes) representing communities cards. The order of the five cards is random and any of them can be null. 
+
+<p align="center">
+  <img src="images/fig_1.png" alt="Fig_1">
+  <br>
+  <i>Figure 1: Representation of a single card</i>
+</p>
+
+
+
+
+
+![Fig_1](images/fig_1.png)  
 ## Data Creation
 
 ## Classification of Hands
