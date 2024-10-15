@@ -87,9 +87,9 @@ A binary representation of a card could take only 6 bits but for such a low dime
 We will then concatenate multiple cards to make a hand. Each hand is composed of 7 cards, but some of them can be null. We want to train the network on non-full hands. The firts two cards are always here (and will always be on the first 34 bits) to represent the two cards in hand. The five following cards can be present or absent (leaving 17 zeroes) representing communities cards. The order of the five cards is random and any of them can be null. 
 
 <p align="center">
-  <img src="images/fig_1.png" alt="Fig_1">
+  <img src="images/fig_2.png" alt="Fig_2">
   <br>
-  <i>Figure 1: Representation of a single card</i>
+  <i>Figure 1: Representation of a hand</i>
 </p>
 
 
