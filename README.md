@@ -23,16 +23,52 @@ The primary goal of this project is to develop a machine learning model capable 
 In Texas Hold'em, each player is dealt two private cards (known as "hole cards"), and five community cards are dealt face-up on the table in three stages (the flop, turn, and river). Players aim to form the best possible five-card hand using any combination of their two hole cards and the five community cards. Hands may be composed of a mix of private and community cards, and sometimes a player's hand may not be complete until all community cards are revealed.
 
 ### Possible Hands (ranked from strongest to weakest):
-1. **Straight Flush**: Five consecutive cards of the same suit (e.g., ♣9 ♣8 ♣7 ♣6 ♣5).
-2. **Four of a Kind**: Four cards of the same rank (e.g., ♥K ♣K ♦K ♠K ♠3).
-3. **Full House**: Three cards of one rank and two cards of another rank (e.g., ♠Q ♣Q ♦Q ♠5 ♥5).
-4. **Flush**: Five cards of the same suit, not in sequence (e.g., ♠A ♠Q ♠8 ♠6 ♠2).
-5. **Straight**: Five consecutive cards of different suits (e.g., ♥8 ♣7 ♦6 ♠5 ♥4).
-6. **Three of a Kind**: Three cards of the same rank (e.g., ♠J ♦J ♣J ♠7 ♠2).
-7. **Two Pair**: Two cards of one rank and two cards of another rank (e.g., ♠10 ♣10 ♠4 ♣4 ♠A).
-8. **One Pair**: Two cards of the same rank (e.g., ♠K ♣K ♠6 ♥3 ♠2).
-9. **High Card**: When no other hand is made, the highest card plays (e.g., ♠A ♥Q ♦9 ♠6 ♣3).
+<table>
+<tr>
+<td width="50%" valign="top">
 
+### Straight Flush
+![Straight Flush](images/straight_flush.png)  
+Five consecutive cards of the same suit.
+
+### Four of a Kind
+![Four of a Kind](images/four_of_a_kind.png)  
+Four cards of the same rank.
+
+### Full House
+![Full House](images/full_house.png)  
+Three of a kind plus a pair.
+
+### Flush
+![Flush](images/flush.png)  
+Five cards of the same suit, not in sequence.
+
+### Straight
+![Straight](images/straight.png)  
+Five consecutive cards, different suits.
+
+</td>
+<td style="border-left: 1px solid black;" width="50%" valign="top">
+
+### Three of a Kind
+![Three of a Kind](images/three_of_a_kind.png)  
+Three cards of the same rank.
+
+### Two Pair
+![Two Pair](images/two_pair.png)  
+Two cards of one rank and two cards of another rank.
+
+### One Pair
+![One Pair](images/pair.png)  
+Two cards of the same rank.
+
+### High Card
+![High Card](images/high_card.png)  
+When no other hand is made, the highest card plays.
+
+</td>
+</tr>
+</table>
 
 Expl
 
