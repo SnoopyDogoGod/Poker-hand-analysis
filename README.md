@@ -106,8 +106,8 @@ For exemple :
 For each possible combinaison, we will only look after the most probable event, then for most valuable event if some are equiprobable.  
 For exemple :
 
-Given the following cards : 🂱🂨🂩🂹🂬 and evaluating the probability of a three of a kind with the next two following cards.
-It is possible that the last two cards are aces (~2.7%) is less probable than at least an 9 (~8.4%).
+Given the following cards : 🂱🂨🂩🂹🂬 and evaluating the probability of a **three of a kind** with the next two following cards.
+**P**(last two cards are aces) = ~2.7% , is less probable than **P**(at least a 9in the last two cards) = ~8.4%
 We will then keep the probability p = 0.084 and the strength 9 (encoded on 13 bits one-hot vector) 
 
 Given the following cards : 🂱🂱🂩🂹🂬 and evaluating the probability of a three of a kind with the next two following cards.
