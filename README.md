@@ -94,7 +94,26 @@ We will then concatenate multiple cards to make a hand. Each hand is composed of
   <i>Figure 2: Representation of a hand</i>
 </p>
 
+## Labelisation
 
+For the first network, we will use supervised learning. The first objective is to determine the probability of each hand given a set of cards.
+Each of the 9 possible hands is accompagned by 0, 1 or 2 strength factor.
+For exemple :  
+- A flush (🂡🂤🂧🂨🂩) is equal to another, regardless of the value of the cards
+- A Three of a kind (🂱🃁🃑🂹🂬) is defined by the value of 1 card (here the ace)
+- A Two pair (🂱🃁🂩🂹🂬) is defined by the values of 2 cards (here ace and nine)
+
+| Hand            | Number of value indicator | Encoding | Total dimension |
+|-----------------|---------------------------|----------|-----------------|
+| Straight Flush  | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14 |
+| Four of a Kind  | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
+| Full House      | 2                         | 1 probability indicator (1 float) <br/> 2 value indicator (26 bit)| Dim = 27 |
+| Flush           | 0                         | 1 probability indicator (1 float) | Dim = 1 |
+| Straight        | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
+| Three of a Kind | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
+| Two Pair        | 2                         | 1 probability indicator (1 float) <br/> 2 value indicator (26 bit)| Dim = 27|
+| One Pair        | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
+| High Card       | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
 
 
 
