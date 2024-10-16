@@ -99,10 +99,10 @@ We will then concatenate multiple cards to make a hand. Each hand is composed of
 For the first network, we will use supervised learning. The first objective is to determine the probability of each hand given a set of cards.
 Each of the 9 possible hands is accompagned by 0, 1 or 2 strength factor.
 For exemple :  
-- A flush (🂡🂤🂧🂨🂩) is equal to another, regardless of the value of the cards
-- A Three of a kind (🂱🃁🃑🂹🂬) is defined by the value of 1 card (here the ace)
-- A Two pair (🂱🃁🂩🂹🂬) is defined by the values of 2 cards (here ace and nine)
-We will only look after the most probable then most valuable for each hand.
+- A flush (🂡🂤🂧🂨🂩) is equal to another, regardless of the value of the cards  
+- A Three of a kind (🂱🃁🃑🂹🂬) is defined by the value of 1 card (here the ace)   
+- A Two pair (🂱🃁🂩🂹🂬) is defined by the values of 2 cards (here ace and nine)  
+For each possible combinaison, we will only look after the most probable event, then for most valuable event if some are equiprobable.  
 For exemple :
 
 Given the following cards : 🂱🂨🂩🂹🂬 and evaluating the probability of a three of a kind with the next two following cards.
