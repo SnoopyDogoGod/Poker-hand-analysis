@@ -102,6 +102,15 @@ For exemple :
 - A flush (🂡🂤🂧🂨🂩) is equal to another, regardless of the value of the cards
 - A Three of a kind (🂱🃁🃑🂹🂬) is defined by the value of 1 card (here the ace)
 - A Two pair (🂱🃁🂩🂹🂬) is defined by the values of 2 cards (here ace and nine)
+We will only look after the most probable then most valuable for each hand.
+For exemple :
+
+Given the following cards : 🂱🂨🂩🂹🂬 and evaluating the probability of a three of a kind with the next two following cards.
+It is possible that the last two cards are aces (~2.7%) is less probable than at least an 9 (~8.4%).
+We will then keep the probability p = 0.084 and the strength 9 (encoded on 13 bits one-hot vector) 
+
+Given the following cards : 🂱🂱🂩🂹🂬 and evaluating the probability of a three of a kind with the next two following cards.
+This time, the probability of at least one Ace or the probability of at least one 9 are equal. We will then keep the one with the better value (here the Ace)
 
 | Hand            | Number of value indicator | Encoding | Total dimension |
 |-----------------|---------------------------|----------|-----------------|
@@ -113,7 +122,9 @@ For exemple :
 | Three of a Kind | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
 | Two Pair        | 2                         | 1 probability indicator (1 float) <br/> 2 value indicator (26 bit)| Dim = 27|
 | One Pair        | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
-| High Card       | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
+| High Card       | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|  
+
+However, one set of thoses probabilities isn't enought. 
 
 
 
