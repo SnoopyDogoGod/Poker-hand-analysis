@@ -11,7 +11,12 @@
 ---
 
 ## Objectives
-The primary goal of this project is to develop a machine learning model capable of evaluating and comparing poker hands in Texas Hold'em on two criteria : a note and a confiance value.
+The primary goal of this project is to develop a machine learning model capable of evaluating and comparing poker hands in Texas Hold'em on two criteria : a note and a confiance value.  
+<p align="center">
+  <img src="images/fig_0.png" alt="Fig_0">
+  <br>
+  <i>Figure 0: Basic representation of the objective</i>
+</p>
 
 ### Steps to achieve this:
 1. **Data Representation**: Define an efficient encoding for poker hands (cards' rank and suit).
