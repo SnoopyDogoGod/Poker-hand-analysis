@@ -137,10 +137,7 @@ This mean that the high card calculated will only be on the first two cards.
   <i>Figure 3: Labelisation of a hand</i>
 </p>
 
-As we can see on **Figure 3**, we labelise the 119 bit hand to a 263 bit vector of strength probability.
-
-
-
+As we can see on **Figure 3**, we labelise the 119 bit hand to a 263 dimentional vector of strength probability.
 
 ## Data Creation
 
