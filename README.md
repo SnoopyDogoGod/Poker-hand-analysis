@@ -123,12 +123,15 @@ This time, the probability of at least one Ace or the probability of at least on
 | Three of a Kind | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
 | Two Pair        | 2                         | 1 probability indicator (1 float) <br/> 2 value indicator (26 bit)| Dim = 27|
 | One Pair        | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
-| High Card       | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|  
+| High Card       | 1                         | 1 value indicator (13 bit)<br/> (p=1)| Dim = 13|  
 
 However, one set of thoses probabilities isn't enought. This way of calculation doesn't differientiate the two cards in hand and the communitie cards. 
 A good hand 🂱🂱🃁🂹🂨🂧🃓 is only good if the best cards are in the player hand. In this case, if the three aces are in the communities card, the player doesn't have any adventages over others and the hand should be rated poorly.  
 We have to calculate a second set of probability, but this time only on the communities cards. This adds a new dimention to the rating and will allow the NN to compare it's own cards with the possible hands of other players. 
-Considering this, we have a slight modification to the pervious probability set. A high card on the community board is never used. Indeed, a high card is revelant if there is no combinaison (or equal combinaison). 
+Considering this, we have a slight modification to the pervious probability set. A high card on the community board is never used. Indeed, a high card is only revelant if there is no combinaison (or equal combinaison) amongst all players. If the highest card it in a player hand, he win. Otherwise, all player take the higest card on the community board and there is another equality.  
+This mean that the high card calculated will only be on the first two cards.
+
+
 
 ## Data Creation
 
