@@ -106,11 +106,11 @@ For exemple :
 For each possible combinaison, we will only look after the most probable event, then for most valuable event if some are equiprobable.  
 For exemple :
 
-Given the following cards : 🂱🂨🂩🂹🂬 and evaluating the probability of a **three of a kind** with the next two following cards.
+Given the following cards : 🂱🂨🂩🂹🂧 and evaluating the probability of a **three of a kind** with the next two following cards.
 **P**(last two cards are aces) = ~2.7% , is less probable than **P**(at least a 9in the last two cards) = ~8.4%
 We will then keep the probability p = 0.084 and the strength 9 (encoded on 13 bits one-hot vector) 
 
-Given the following cards : 🂱🂱🂩🂹🂬 and evaluating the probability of a three of a kind with the next two following cards.
+Given the following cards : 🂱🂱🂩🂹🃇 and evaluating the probability of a three of a kind with the next two following cards.
 This time, the probability of at least one Ace or the probability of at least one 9 are equal. We will then keep the one with the better value (here the Ace)
 
 | Hand            | Number of value indicator | Encoding | Total dimension |
@@ -125,9 +125,10 @@ This time, the probability of at least one Ace or the probability of at least on
 | One Pair        | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|
 | High Card       | 1                         | 1 probability indicator (1 float) <br/> 1 value indicator (13 bit)| Dim = 14|  
 
-However, one set of thoses probabilities isn't enought. 
-
-
+However, one set of thoses probabilities isn't enought. This way of calculation doesn't differientiate the two cards in hand and the communitie cards. 
+A good hand 🂱🂱🃁🂹🂨🂧🃓 is only good if the best cards are in the player hand. In this case, if the three aces are in the communities card, the player doesn't have any adventages over others and the hand should be rated poorly.  
+We have to calculate a second set of probability, but this time only on the communities cards. This adds a new dimention to the rating and will allow the NN to compare it's own cards with the possible hands of other players. 
+Considering this, we have a slight modification to the pervious probability set. A high card on the community board is never used. Indeed, a high card is revelant if there is no combinaison (or equal combinaison). 
 
 ## Data Creation
 
