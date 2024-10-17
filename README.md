@@ -128,8 +128,17 @@ This time, the probability of at least one Ace or the probability of at least on
 However, one set of thoses probabilities isn't enought. This way of calculation doesn't differientiate the two cards in hand and the communitie cards. 
 A good hand 🂱🂱🃁🂹🂨🂧🃓 is only good if the best cards are in the player hand. In this case, if the three aces are in the communities card, the player doesn't have any adventages over others and the hand should be rated poorly.  
 We have to calculate a second set of probability, but this time only on the communities cards. This adds a new dimention to the rating and will allow the NN to compare it's own cards with the possible hands of other players. 
-Considering this, we have a slight modification to the pervious probability set. A high card on the community board is never used. Indeed, a high card is only revelant if there is no combinaison (or equal combinaison) amongst all players. If the highest card it in a player hand, he win. Otherwise, all player take the higest card on the community board and there is another equality.  
-This mean that the high card calculated will only be on the first two cards.
+Considering this, we have a slight modification to the pervious probability set. A high card on the community board is never used. Indeed, a high card is only revelant if there is no combinaison (or equal combinaison) amongst all players. If the highest card it in a player hand, he win. Otherwise, all player take the higest card on the community board and there is another equality.   
+This mean that the high card calculated will only be on the first two cards.  
+
+<p align="center">
+  <img src="images/fig_3.png" alt="Fig_3">
+  <br>
+  <i>Figure 3: Labelisation of a hand</i>
+</p>
+
+As we can see on **Figure 3**, we labelise the 119 bit hand to a 263 bit vector of strength probability.
+
 
 
 
