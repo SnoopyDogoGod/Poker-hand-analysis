@@ -1,5 +1,5 @@
 # Poker Hand Evaluation with Machine Learning
-TEST
+
 ## Table of Contents
 - [Objectives](#objectives)
 - [Texas Hold'em Rules](#texas-holdem-rules)
